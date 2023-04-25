@@ -57,6 +57,7 @@ def compare(ingredient): #3
     if water_amt > a:
         print(f"current milk: {a}, need {water_amt}")
         make_drink = False
+        exit()
     else:
         for i in resources:
             if i == 'water':
@@ -72,6 +73,7 @@ def compare(ingredient): #3
     if milk_amt > b:
         print(f"current milk: {b}, need {milk_amt}")
         make_drink = False
+        exit()
     else:
         for i in resources:
             if i == 'milk':
@@ -88,6 +90,7 @@ def compare(ingredient): #3
     if coffee_amt > c:
         print(f"current coffee: {c}, need {coffee_amt}")
         make_drink = False
+        exit()
     else:
         for i in resources:
             if i == 'coffee':
@@ -97,8 +100,7 @@ def compare(ingredient): #3
 
 "===================================================="
 def compare_e(ingredient): #3.5
-    global make_drink
-    make_drink = True
+    global make_drink; True
 
     for i in ingredient:
         if i == 'water':
@@ -108,6 +110,7 @@ def compare_e(ingredient): #3.5
     if water_amt > a:
         print(f"current milk: {a}, need {water_amt}")
         make_drink = False
+        exit()
     else:
         for i in resources:
             if i == 'water':
@@ -120,10 +123,10 @@ def compare_e(ingredient): #3.5
             coffee_amt = ingredient[i]
 
     c = resources.get('coffee')
-    print(c)
     if coffee_amt > c:
         print(f"current coffee: {c}, need {coffee_amt}")
         make_drink = False
+        exit()
     else:
         for i in resources:
             if i == 'coffee':
@@ -169,10 +172,12 @@ while make_drink:
     if user_drink == "report":
         make_drink = False
         break
+
     if user_drink == 'espresso':
         compare_e(get_ingr(x))
     else:
         compare(get_ingr(x))
+
 
     print("Please insert coins.")
     quarters = float(input("how many quarters?: "))
@@ -187,6 +192,6 @@ while make_drink:
     else:
         print(f"enjoy your {user_drink}!")
 
-"++++++++++++++++++++++++++++++++++++++++++++++++++"
 
+"++++++++++++++++++++++++++++++++++++++++++++++++++"
 
