@@ -3,7 +3,7 @@ from menu import MENU, resources
 total_money = 0.00
 print(total_money)
 global make_drink
-make_drink = True #FLAG
+make_drink = True
 
 "===================================================="
 def choice(): #1
@@ -12,9 +12,9 @@ def choice(): #1
     if user_drink == 'report':
         report()
 
-    for i in MENU:  # for key in dict MENU, eg: esp, lat, cap
-        if i == user_drink:  # for the key that is the same as user input choice ("drink" -> choice())
-            return MENU[i]  # return nested dicts 'ingrediants' and 'cost'
+    for i in MENU:
+        if i == user_drink:
+            return MENU[i]
 
 "===================================================="
 
@@ -151,13 +151,13 @@ def comp_cost():
 
     if get_price(x) > d:
         print(f"price for drink is {get_price(x)}, you inserted {d} /// comp_cost()")
-        total_money = 0 #need to make sure money is defined and matched (maybe global)
-        make_drink = False #FLAG
+        total_money = 0
+        make_drink = False
     else:
         rest = round(d - get_price(x), 2)
         total_money = 0
         print(f"Here is your ${rest} back in change /// comp_cost()")
-        make_drink = True #should set up loop so thing keeps going f enough money #FLAG
+        make_drink = True
 
 "===================================================="
 
